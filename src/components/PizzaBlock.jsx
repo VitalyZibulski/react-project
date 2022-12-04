@@ -9,13 +9,13 @@ function PizzaBlock({ title, price, imageUrl, sizes, types }) {
       <h4 className="pizza-block__title">{title}</h4>
       <div className="pizza-block__selector">
         <ul>
-          {types.map((type) => (
-            <li>{typeNames[type]}</li>
+          {types.map((type, index) => (
+            <li key={index}>{typeNames[type]}</li>
           ))}
         </ul>
         <ul>
-          {sizes.map((size) => (
-            <li>{size}</li>
+          {sizes.map((size, index) => (
+            <li key={index}>{size}</li>
           ))}
         </ul>
       </div>

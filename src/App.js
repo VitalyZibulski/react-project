@@ -8,6 +8,10 @@ import pizzas from "./assets/pizzas.json";
 import "./scss/app.scss";
 
 function App() {
+  let data = fetch('https://638bd34aeafd5557469d121f.mockapi.io/items').then(res => {
+    res.json();
+  })
+
   return (
     <div className="wrapper">
       <Header />
@@ -21,6 +25,7 @@ function App() {
           <div className="content__items">
             {pizzas.map((obj) => (
               <PizzaBlock
+                key={obj.id}
                 title={obj.title}
                 price={obj.price}
                 imageUrl={obj.imageUrl}
